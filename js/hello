@@ -2,4 +2,53 @@
 
 "use strict"
 
-console.log("Hello World");
+var c = require("skilstak-colors")
+
+var name = "Rob";
+var is_cool = false;
+var age = 2;
+
+function printRed(message) {
+  console.log(c.clear + c.r + message + c.reset);
+}
+
+function printMulti(message) {
+  console.log(c.clear + c.multi(message) + c.reset);
+}
+
+function printRandom(message) {
+  console.log(c.clear + c.random() + message + c.reset);
+}
+
+function printGreenOrBlue(message) {
+  var luck = Math.random();
+  if (luck > 0.5) {
+    console.log(c.clear + c.green + message + c.reset);
+  }
+  else {
+    console.log(c.clear + c.blue + message + c.reset);
+  }
+}
+
+var i = 0;
+
+while (i === 0) {
+  
+  var luck2 = Math.random()
+
+  if (luck2 <= 0.25) {
+    printRed("Hello World");
+  }
+
+  else if (luck2 <= 0.5) {
+    printMulti("Hello World");
+  }
+
+  else if (luck2 <= 0.75) {
+    printRandom("Hello World");
+  } 
+
+  else {
+    printGreenOrBlue("Hello World");
+  }
+}
